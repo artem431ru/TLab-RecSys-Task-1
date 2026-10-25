@@ -1,0 +1,117 @@
+{
+  "source": "synthetic_test",
+  "boundaries": [
+    "2025-01-11 23:32:57.047800451",
+    "2025-01-20 12:44:07.507496596",
+    "2025-01-24 19:07:19.266344723"
+  ],
+  "train_users": 109,
+  "val_users": 88,
+  "test_users": 97,
+  "candidate_policy": "historical_popular_top_n",
+  "sampled_metrics_caveat": "Only historical top-N items; user subset with positive in pool",
+  "experiments": {
+    "manual": {
+      "users": 97,
+      "recall@10": 0.6512027491408935,
+      "ndcg@10": 0.4210063864288083,
+      "val": {
+        "users": 88,
+        "recall@10": 0.6325757575757577,
+        "ndcg@10": 0.3968681407750449
+      },
+      "features": 15,
+      "wall_seconds_train_and_eval": 0.12,
+      "feature_names": [
+        "user_count_all",
+        "item_count_all",
+        "pair_count_all",
+        "user_count_7d",
+        "user_count_30d",
+        "item_count_7d",
+        "item_count_30d",
+        "pair_count_7d",
+        "pair_count_30d",
+        "user_gap_days",
+        "item_gap_days",
+        "pair_gap_days",
+        "user_distinct_items",
+        "item_distinct_users",
+        "pair_share_user_30d"
+      ]
+    },
+    "automatic_grid": {
+      "users": 97,
+      "recall@10": 0.7216494845360825,
+      "ndcg@10": 0.42562565504579075,
+      "val": {
+        "users": 88,
+        "recall@10": 0.6723484848484849,
+        "ndcg@10": 0.3877980256121656
+      },
+      "features": 33,
+      "wall_seconds_train_and_eval": 0.09,
+      "feature_names": [
+        "user_count_all",
+        "item_count_all",
+        "pair_count_all",
+        "user_count_3d",
+        "item_count_3d",
+        "pair_count_3d",
+        "user_count_7d",
+        "item_count_7d",
+        "pair_count_7d",
+        "user_count_14d",
+        "item_count_14d",
+        "pair_count_14d",
+        "user_count_30d",
+        "item_count_30d",
+        "pair_count_30d",
+        "user_count_60d",
+        "item_count_60d",
+        "pair_count_60d",
+        "user_gap_days",
+        "item_gap_days",
+        "pair_gap_days",
+        "user_distinct_items",
+        "item_distinct_users",
+        "pair_share_user_3d",
+        "item_share_global_3d",
+        "pair_share_user_7d",
+        "item_share_global_7d",
+        "pair_share_user_14d",
+        "item_share_global_14d",
+        "pair_share_user_30d",
+        "item_share_global_30d",
+        "pair_share_user_60d",
+        "item_share_global_60d"
+      ]
+    },
+    "automatic_selected": {
+      "users": 97,
+      "recall@10": 0.6701030927835051,
+      "ndcg@10": 0.4128043960914834,
+      "features": 12,
+      "feature_names": [
+        "pair_gap_days",
+        "pair_count_all",
+        "pair_share_user_60d",
+        "pair_share_user_14d",
+        "pair_share_user_30d",
+        "user_distinct_items",
+        "user_gap_days",
+        "pair_count_60d",
+        "item_count_30d",
+        "pair_count_14d",
+        "item_share_global_3d",
+        "item_share_global_60d"
+      ],
+      "val": {
+        "users": 88,
+        "recall@10": 0.6098484848484849,
+        "ndcg@10": 0.38333864319659927
+      },
+      "note": "Feature selection uses model importances fitted on train, not test."
+    }
+  }
+}

@@ -1,8 +1,10 @@
-data/*
-!data/.gitkeep
-results/*
-!results/.gitkeep
-__pycache__/
-*.pyc
 .venv/
-.ipynb_checkpoints/
+__pycache__/
+.pytest_cache/
+data/
+catboost_info/
+*.pyc
+*.cbm
+results/*predictions*.csv
+results/validation_compare.csv
+results/validation_genre.csv
