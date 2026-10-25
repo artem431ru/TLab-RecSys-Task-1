@@ -8,3 +8,4 @@ catboost_info/
 results/*predictions*.csv
 results/validation_compare.csv
 results/validation_genre.csv
+catboost_info/
